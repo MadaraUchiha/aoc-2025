@@ -1,0 +1,75 @@
+---
+description: Create a new Advent of Code day solution scaffold
+globs: 
+alwaysApply: false
+---
+
+# New Day Solution Template
+
+When the user asks to create a new day (e.g., "create day 3", "new day 5", "scaffold day 12"), follow these steps:
+
+## Steps
+
+1. **Create the day folder**: Create `src/days/dayNN/` where NN is the day number zero-padded to 2 digits (e.g., `day03`, `day12`)
+
+2. **Create mod.rs** with skeleton implementation:
+
+```rust
+use crate::solution::Solution;
+use anyhow::Result;
+
+pub struct DayNN;
+
+impl Solution for DayNN {
+    type Answer = u64;
+
+    fn day(&self) -> u8 {
+        N
+    }
+
+    fn part1(input: &str) -> Result<Self::Answer> {
+        todo!("Implement part 1")
+    }
+
+    fn part2(input: &str) -> Result<Self::Answer> {
+        todo!("Implement part 2")
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_part1() {
+        let answer = DayNN.run_test1();
+        assert_eq!(answer, 0); // TODO: Update with expected answer
+    }
+
+    #[test]
+    fn test_part2() {
+        let answer = DayNN.run_test2();
+        assert_eq!(answer, 0); // TODO: Update with expected answer
+    }
+}
+```
+
+Replace `NN` with the zero-padded day number (e.g., `Day03`, `Day12`) and `N` with the actual day number (e.g., `3`, `12`).
+
+3. **Create empty input files**:
+   - `src/days/dayNN/input.txt` (empty)
+   - `src/days/dayNN/sample.txt` (empty)
+
+4. **Update src/days/mod.rs**: Add `pub mod dayNN;` to the module declarations (keep them in order)
+
+5. **Update src/main.rs**: Add the match arm `N => dayNN::DayNN.run(),` in the match statement (keep them in order)
+
+## Example
+
+For day 3:
+- Create folder: `src/days/day03/`
+- Create `src/days/day03/mod.rs` with `Day03` struct
+- Create empty `src/days/day03/input.txt`
+- Create empty `src/days/day03/sample.txt`
+- Add `pub mod day03;` to `src/days/mod.rs`
+- Add `3 => day03::Day03.run(),` to the match in `src/main.rs`
