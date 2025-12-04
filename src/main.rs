@@ -20,6 +20,7 @@ fn main() -> Result<()> {
     let cli = Cli::parse();
     let result = match cli.day {
         1 => day01::Day01.run(),
+        2 => day02::Day02.run(),
         _ => anyhow::bail!("Day {} not implemented", cli.day),
     };
     result
