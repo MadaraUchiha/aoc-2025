@@ -23,8 +23,8 @@ pub const ADJACENT8: [Vec2D; 8] = [
 
 #[derive(Clone, Copy, PartialEq, Eq, Hash, Debug)]
 pub struct Vec2D {
-    x: i64,
-    y: i64,
+    pub x: i64,
+    pub y: i64,
 }
 
 impl Vec2D {
