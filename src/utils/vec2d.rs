@@ -3,6 +3,7 @@
 use std::{
     fmt::{Display, Formatter},
     ops::{Add, Sub},
+    str::FromStr,
 };
 
 pub const UP: Vec2D = Vec2D::new(0, -1);
@@ -38,6 +39,16 @@ impl Vec2D {
 
     pub fn adjacent_8(&self) -> [Vec2D; 8] {
         ADJACENT8.map(|d| *self + d)
+    }
+}
+
+impl FromStr for Vec2D {
+    type Err = anyhow::Error;
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        let (x, y) = s
+            .split_once(',')
+            .ok_or(anyhow::anyhow!("Invalid vector string: {}", s))?;
+        Ok(Self::new(x.parse::<i64>()?, y.parse::<i64>()?))
     }
 }
 
