@@ -5,7 +5,7 @@ use std::{
 
 use crate::{
     solution::Solution,
-    utils::{Vec2D, ZERO},
+    utils::vec2d::{Vec2D, ZERO},
 };
 use anyhow::Result;
 

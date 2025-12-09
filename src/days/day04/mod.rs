@@ -3,7 +3,7 @@ use std::convert::Infallible;
 use std::str::FromStr;
 
 use crate::solution::Solution;
-use crate::utils::Vec2D;
+use crate::utils::vec2d::Vec2D;
 use anyhow::Result;
 
 pub struct Day04;

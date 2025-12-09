@@ -1,3 +1,2 @@
-mod vec2d;
-
-pub use vec2d::*;
+pub mod vec2d;
+pub mod vec3d;
