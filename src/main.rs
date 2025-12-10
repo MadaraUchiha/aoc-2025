@@ -29,6 +29,7 @@ fn main() -> Result<()> {
         7 => day07::Day07.run(),
         8 => day08::Day08.run(),
         9 => day09::Day09.run(),
+        10 => day10::Day10.run(),
         _ => anyhow::bail!("Day {} not implemented", cli.day),
     };
     result
