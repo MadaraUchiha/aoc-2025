@@ -50,8 +50,15 @@ pub trait Solution {
 
     #[cfg(test)]
     fn run_test2(&self) -> Self::Answer {
+        use std::path::Path;
+
         let day = self.day();
-        let path = format!("./src/days/day{day:02}/sample.txt");
+        let part2_path = format!("./src/days/day{day:02}/sample_part2.txt");
+        let path = if Path::new(&part2_path).exists() {
+            part2_path
+        } else {
+            format!("./src/days/day{day:02}/sample.txt")
+        };
         let input = fs::read_to_string(path).unwrap();
         Self::part2(&input).expect("Part 2 failed")
     }
